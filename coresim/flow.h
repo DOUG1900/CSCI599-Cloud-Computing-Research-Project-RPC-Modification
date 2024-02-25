@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <map>
 #include <vector>
+#include <cstdint>
 
 class Packet;
 class Ack;
