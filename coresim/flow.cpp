@@ -4,7 +4,6 @@
 #include <iostream>
 #include <math.h>
 #include <cstddef>
-#include <cstdint>
 
 #include "agg_channel.h"
 #include "channel.h"
