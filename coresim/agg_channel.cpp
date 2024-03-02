@@ -141,5 +141,5 @@ Channel* AggChannel::pick_next_channel_RR() {
 }
 
 double AggChannel::approach_max_factor(double max, int flow_size, double rate) {
-    return max - exp(-rate * flow_size);
+    return max - (max-0.5)*exp(-rate * flow_size);
 }
