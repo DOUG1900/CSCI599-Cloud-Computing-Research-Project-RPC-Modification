@@ -1,19 +1,15 @@
 #!/bin/bash
-
-# Exit script on any error
-set -e
-
 # Update package lists
 echo "Updating package lists..."
 sudo apt-get update
 
 # Upgrade all installed packages to their latest versions
 echo "Upgrading installed packages..."
-sudo apt-get upgrade -y
+sudo apt-get upgrade
 
 # Install required packages
 echo "Installing autoconf and automake..."
-sudo apt-get install -y autoconf automake
+sudo apt-get install automake
 
 # Generate configuration scripts
 echo "Running aclocal..."
