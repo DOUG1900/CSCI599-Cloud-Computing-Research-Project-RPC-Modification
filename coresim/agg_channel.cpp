@@ -87,7 +87,7 @@ void AggChannel::process_latency_signal(double fct_in, uint32_t flow_id, int flo
     ////collect_memory = false;  // hack to not enter the following if loop for now (to try the new ver of algorithm)
     if (collect_memory) {
         if (num_misses_in_mem == 0) {
-            admit_prob += params.dp_alpha;
+            admit_prob += params.dp_alpha*approach_max_factor(1.0,flow_size,0.154);
             if (admit_prob > 1) {
                 admit_prob = 1;
             }
@@ -138,4 +138,8 @@ Channel* AggChannel::pick_next_channel_RR() {
         channel_idx_RR = 0;
     }
     return next_channel;
+}
+
+double AggChannel::approach_max_factor(double max, int flow_size, double rate) {
+    return max - (max-1/max)*exp(-rate * flow_size);
 }

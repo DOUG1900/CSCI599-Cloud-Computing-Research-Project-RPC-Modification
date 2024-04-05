@@ -17,6 +17,7 @@ class AggChannel {
         ~AggChannel();
 
         void process_latency_signal(double fct_in, uint32_t flow_id, int flow_size);
+        double approach_max_factor(double baseValue, int flowSize, double rate);
         Channel *pick_next_channel_RR();
 
         uint32_t id;
